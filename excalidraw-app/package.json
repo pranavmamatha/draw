@@ -41,9 +41,8 @@
   "prettier": "@excalidraw/prettier-config",
   "scripts": {
     "build-node": "node ./scripts/build-node.js",
-    "build:app": "cross-env VITE_APP_GIT_SHA=$VERCEL_GIT_COMMIT_SHA VITE_APP_ENABLE_TRACKING=true vite build",
+    "build:app": "vite build",
     "build:app:docker": "cross-env VITE_APP_DISABLE_SENTRY=true vite build",
-    "vercel-build": "yarn build",
     "build:version": "node ../scripts/build-version.js",
     "build": "yarn build:app && yarn build:version",
     "start": "yarn && vite",
@@ -52,6 +51,7 @@
     "build:preview": "yarn build && vite preview --port 5000"
   },
   "devDependencies": {
-    "vite-plugin-sitemap": "0.7.1"
+    "vite-plugin-sitemap": "0.7.1",
+    "@babel/core": "^7.24.0"
   }
 }
